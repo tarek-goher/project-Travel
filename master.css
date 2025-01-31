@@ -1,0 +1,595 @@
+:root{
+    --blue:#0080ff;
+}
+    *{
+        font-family: poppins , sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-transform:capitalize ;
+        border: none;
+        text-decoration: none;
+        transition: all .5s  linear;    
+    }
+    html{
+        font-size: 62%;
+        overflow-x:hidden ;
+        scroll-behavior: smooth;
+    }
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    padding: 2rem 9%;
+}
+header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+}
+header .logo span{
+    color: var(--blue);
+}
+nav a{
+    color: #fff;
+    font-size: 2rem;
+    margin: 0 .8rem;
+}
+nav a:hover{
+    color: var(--blue);
+}
+header .icon i{
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    margin-right:2rem ;
+}
+
+header .icon i:hover{
+    color: var(--blue);
+}
+.search-form{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    z-index: 10000;
+    padding: 1.5rem 2rem;
+    border-top: 1rem solid rgba(255 , 255, 255 .2);
+    clip-path: polygon(0 0 , 100% 0 , 100% 0,0 0);  
+}
+.search-form.active{
+    clip-path: polygon(0 0 , 100%  0, 100% 100%, 0 100%); 
+}
+.search-form #search-bar{
+ width: 100%;
+ padding: 1rem;
+ color: #333;
+ font-size: 1.7rem;
+ border-radius: .5rem;
+}
+.search-form label{
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    margin-left: 1.5rem;
+}
+.search-form label:hover{
+    color: var(--blue);
+}
+
+.login-form{
+    position: fixed;
+    top: -120%;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0 ,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100000;
+}
+.login-form form{
+    margin: 2rem;
+    padding: 1.5rem 2rem;
+    border-radius: .5rem;
+    background-color: white;
+    width: 50rem;
+}
+.login-form form h3{
+    font-size: 3rem;
+    color: #444;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    text-align: center;
+}
+.login-form form .box{
+width: 100%;
+padding: 1rem;
+font-size: 1.7rem;
+color: #333;
+margin: .6rem 0;
+border:.1rem solid rgb(0, 0, 0 ,0.3);
+text-transform: none;
+}
+.login-form form .btn{
+    cursor: pointer;
+}
+.btn{
+    display: inline;
+    margin-top: 1rem;
+    color: var(--blue);
+    padding: .8rem 3rem;
+    border: .2rem solid var(--blue);
+    cursor: pointer;
+    font-size: 1.7rem;
+    background: rgba(255 , 165, 0,.2);
+
+}
+.btn:hover{
+    color: white;
+    background-color: var(--blue);
+}
+.login-form form .btn{
+    display: block;
+    width: 100%;
+}
+
+.login-form form #remember{
+    margin: 2rem 0;
+}
+.login-form form label{
+    font-size: 1.5rem;
+
+}
+.login-form form p{
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: #666;
+}
+.login-form form p a{
+    color: var(--blue);
+
+}
+#close{
+ position: absolute;
+ top: 2rem;
+ right: 7   rem;
+ font-size: 5rem;
+ color: white; 
+ cursor: pointer;  
+}
+#mnue-bar{
+    color: white;
+    border: .1rem solid white;
+    border-radius: .5rem;
+    font-size: 2.5rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+}
+@media(max-width:990px){
+    #mnue-bar{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        border-top: 1rem solid  rgba(255 , 255, 255,.2);
+        padding: 1rem 2rem;
+        clip-path: polygon(0 0, 100% 0 , 100% 0,0 0);
+    }
+    header .navbar.active{
+        clip-path: polygon(0 0 , 100%  0, 100% 100%, 0 100%); 
+
+    }
+    header .navbar a{
+        display: block;
+        border-radius:.5rem ;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        background-color: #222;
+    }
+    html{
+        font-size: 40%;
+    }
+}
+
+
+section{
+    padding: 2rem 9%;
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column ;
+    position: relative;
+    z-index: 0;
+}
+.content{
+    text-align: center;
+}
+.content h3{
+    font-size: 4.5rem;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 .3rem  .5rem rgba(0, 0, 0, 0.1);
+}
+.content p{
+    font-size: 2.5rem;
+    color: white;
+    padding: .5rem 0;
+}
+.content .btn{
+   position: relative;
+   top: 1rem;
+}
+
+.home .video-conteiner video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+object-fit: cover ;
+z-index: -1;
+}
+.home .controls{
+    padding: 1rem;
+    border-radius: 5rem;
+    background-color: rgba(0, 0, 0 ,0.7);
+    position: relative;
+    top: 10rem;
+}
+.controls .video-btn{
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    margin: 0 .5rem ;
+}
+.controls .blue{
+    background-color: var(--blue);
+}
+.hide{
+    padding: 2.5rem 0;
+   text-align: center;
+
+}
+.hide span{
+font-size: 3.5rem;
+background-color: var(--blue);
+color: white;
+border-radius: .5rem;
+padding: .5rem 1rem;
+}
+
+.book .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+.book .row .imges {
+    flex:1 1  40rem ;
+}
+.book .row .imges img{
+width: 100%;
+
+}
+.book .row form{
+    flex: 1 1 40rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+}
+.book .row form .input-div input{
+    width: 100%;
+    padding: 1rem;
+    border: 1rem solid rgba(0, 0, 0, 0.138);
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+}
+.book .row form .input-div h3{
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #666;
+}
+.packages .conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.packages .conteiner .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0 ,0.1);
+    overflow: hidden;
+   
+}
+.packages .conteiner img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.packages .conteiner .box .card{
+    padding: 2rem;
+}
+
+.packages .conteiner .box .card h3{
+    font-size: 2rem;
+    color: #333;
+}
+.packages .conteiner .box .card h3 i{
+    color: var(--blue);
+}
+
+.packages .conteiner .box .card p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.packages .conteiner .box .card .start{
+    font-size: 1.7rem;
+    color: var(--blue);
+
+}
+.packages .conteiner .box .card .preice{
+    font-size: 2rem;
+    padding-top: 1rem;
+    margin-bottom: .8rem;
+    color: #333;
+}
+.packages .conteiner .box .card .preice span{
+    font-size: 1.5rem;
+    color: #666;
+    text-decoration: line-through;
+}
+.Services{
+    height: 93vh;
+}
+.Services .container{
+    display: flex;
+    flex-wrap:wrap ;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: 90%;
+    position: relative;
+    left: 5%;
+}
+.Services .container .box{
+    flex:1 1 30rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    text-align: center;
+}
+.Services .container .box i{
+    padding: 1rem;
+    font-size: 5rem;
+    color: var(--blue);
+}
+.Services .container .box h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+.Services .container .box p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.Services .container .box:hover{
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------footer------------------------- */
+.footer {
+    background: #140B5C;
+    color: #fff;
+    padding: 3rem 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section h3 span {
+    color: #4481eb;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #4481eb;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    background: #4481ebdb;
+    margin: 0 0.5rem 0.5rem 0;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #4481eb;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #4481eb;
+    padding-left: 5px;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info li i {
+    color: #4481eb;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.newsletter-form .btn {
+    padding: 0.8rem 1.5rem;
+    background: #4481eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter-form .btn:hover {
+    background: #2d6be0;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom span {
+    color: #4481eb;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+    
+    .contact-info li {
+        justify-content: center;
+    }
+    
+    .newsletter-form {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
